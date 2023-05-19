@@ -1,0 +1,35 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class swing1 extends Frame implements ActionListener {
+    JFrame f;
+    JTextField tf1;
+    JLabel l1;
+    JButton b;
+    swing1(){
+        JFrame f = new JFrame();
+        tf1 = new JTextField();
+        tf1.setBounds(50, 50, 120, 50);
+        l1 = new JLabel();
+        l1.setBounds(50, 100, 250, 20);
+        b = new JButton("Find IP");
+        b.setBounds(50, 150, 95, 30);
+        b.addActionListener(this); 
+        f.add(tf1);
+        f.add(l1);
+        f.add(b);
+        f.setSize(400, 400);
+        f.setVisible(true);
+        f.setLayout(null);
+    }
+    public void actionPerformed(ActionEvent e){
+        try{  
+            String host=tf1.getText();  
+            String ip=java.net.InetAddress.getByName(host).getHostAddress();  
+            l1.setText("IP of "+host+" is: "+ip);  
+            }catch(Exception ex){System.out.println(ex);}  
+        } public static void main(String[] args){
+        new swing1();
+    }
+}
