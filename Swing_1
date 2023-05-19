@@ -1,0 +1,30 @@
+import javax.swing.*;
+
+
+public class swing {
+    JFrame f;
+    JTextField tf1;
+    JLabel l1;
+    swing(){
+        JFrame f = new JFrame();
+        JTextField tf1 = new JTextField();
+        tf1.setBounds(100, 100, 150, 20);
+        JLabel l1 = new JLabel();
+        l1.setText("Enter your name");
+        l1.setBounds(50, 50, 50, 50);
+        JButton b = new JButton("Click me");
+        b.setBounds(50, 100, 120, 12);
+        f.add(b);
+        f.add(tf1);
+        f.add(l1);
+
+        f.setSize(500, 500);
+        f.setVisible(true);
+        f.setLayout(null);
+
+
+    }
+    public static void main(String[] args){
+        new swing();
+    }
+}
